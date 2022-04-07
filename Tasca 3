@@ -1,0 +1,53 @@
+Main
+
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+    // CONSTANTES
+    private static final String MSG_DEF="*********************************";
+    private static final String MSG1="Introduce un nombre del cuadrado";
+    private static final String MSG2="Introduce la medida del lado del cuadrado";
+
+    public static void main(String[] args) {
+        // CLASE SQUARE
+        Square square_one = new Square();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(MSG_DEF);
+        System.out.println(MSG1);
+        square_one.setName(sc.next());
+
+
+        System.out.println(MSG2);
+        square_one.setSide(sc.nextFloat());
+
+        System.out.println("Name:"+ square_one.getName());
+        System.out.println("Lado:"+ square_one.getSide());
+        System.out.println("Area:"+ square_one.side* square_one.side);
+        System.out.println("Volumen:"+ square_one.side* square_one.side* square_one.side);
+    }
+}
+
+
+Clase  square   
+
+package com.company;
+
+public class Square {
+    String name;
+    float side;
+
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public float getSide() {
+        return this.side;
+    }
+    public void setSide(float side) {
+        this.side = side;
+    }
+}
