@@ -1,0 +1,76 @@
+Main
+
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+    // CONSTANTES
+    private static final String MSG_DEF="*********************************";
+    private static final String MSG1="Introduce un nombre del cuadrado";
+    private static final String MSG2="Introduce la medida del lado del cuadrado";
+
+    public static void main(String[] args) {
+        String name;
+        float side;
+
+        // CLASE SQUARE
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(MSG_DEF);
+        System.out.println(MSG1);
+        name = sc.next();
+        System.out.println(MSG2);
+        side = sc.nextFloat();
+        System.out.println(MSG_DEF);
+
+        Square square_one = new Square(side);
+
+        System.out.println("Name "+square_one.getName());
+        System.out.println("Lado "+square_one.getSide());
+        System.out.println("Area"+square_one.getArea());
+        System.out.println("Volumen "+square_one.getVol());
+
+    }
+}
+
+Clase Cuadrado 
+
+package com.company;
+
+public class Square {
+    String name;
+    float side;
+
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public float getSide() {
+        return (side*side);
+    }
+    public void setSide(float side) {
+        if(side>0){
+            this.side = side;
+        }else{
+            System.out.println("Error");
+        }
+    }
+
+    public Square (String name,float side){
+        this.setName(name);
+        this.setSide(side);
+    }
+
+    public Square(float side){
+        this(null,side);
+    }
+
+    public float getArea(){
+        return (side*side);
+    }
+    public float getVol(){
+        return (side*side*side);
+    }
+}
